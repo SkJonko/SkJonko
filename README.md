@@ -1,16 +1,43 @@
-## Hi there 👋
+# 👨‍💻 Antonis Kotis
 
-<!--
-**SkJonko/SkJonko** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**.NET Developer | Software Engineer**  
+📍 Athens, Greece  
+📧 antkotis@hotmail.com
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🧠 About Me
+
+Experienced .NET Developer with a strong background in building scalable web and mobile applications. Over the years, I’ve led and contributed to enterprise projects across banking, retail, telecommunication, and digital transformation sectors. I’m passionate about clean code, agile development, and leveraging modern tools to deliver robust, efficient solutions.
+
+---
+
+## 💼 Professional Summary
+
+- Professional experience in software development since 2018.
+- Team leadership in Agile environments.
+- Experience across banking, retail, and telecommunications.
+- Strong focus on backend systems, cloud integration, and mobile solutions.
+
+---
+
+## 🛠️ Technologies & Tools
+
+**Languages & Frameworks**  
+- .NET Core / .NET Framework  
+- ASP.NET, Blazor  
+- Xamarin Forms, MAUI  
+
+**Cloud & DevOps**  
+- Azure DevOps, Azure API Management  
+- CI/CD Pipelines  
+
+**Databases**  
+- Microsoft SQL Server  
+- PostgreSQL  
+- Oracle  
+
+**Other Tools**  
+- Git, Jira, Agile/Scrum, Windows Forms  
+
+---
