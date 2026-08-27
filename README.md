@@ -3,6 +3,7 @@
 **.NET Developer | Software Engineer**  
 📍 Athens, Greece  
 📧 antkotis@hotmail.com
+👉 [View my apps & projects](https://skjonko.github.io/SkJonko/)
 
 ---
 
