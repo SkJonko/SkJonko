@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced Tic-Tac-Toe — MAUI Edition</title>
+<meta name="description" content="An enhanced Tic-Tac-Toe game built with .NET MAUI, featuring animated interactions, accessibility support, an AI opponent, and a unique FIFO gameplay twist.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<style>
+  /* This app's own accent — same design system, different identity */
+  :root, html[data-theme="dark"]{
+    --primary:    #F97316;
+    --primary-btn:#EA580C;
+    --secondary:  #FBBF24;
+    --icon-on-primary:#1C1206;
+  }
+  html[data-theme="light"]{
+    --primary:    #EA580C;
+    --primary-btn:#C2410C;
+    --secondary:  #D97706;
+    --icon-on-primary:#FFFFFF;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <div class="nav-left">
+      <a class="nav-home" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        All apps
+      </a>
+      <a class="nav-brand" href="#top"><span class="mark">✕⭘</span> Tic-Tac-Toe</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li class="hide-mobile"><a href="#screenshots">Screenshots</a></li>
+      <li class="hide-mobile"><a href="#download">Download</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle light and dark theme">
+          <span class="dot" id="themeDot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.4A9 9 0 1 1 11.6 3a7 7 0 0 0 9.4 9.4Z"/></svg>
+          </span>
+          <span id="themeLabel">Dark</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<div class="notice-bar">
+  <div class="wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+    <span><strong>No packaged build yet.</strong> Build it yourself from source with .NET MAUI — see Download below.</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">.NET MAUI · open source</p>
+      <h1>Tic-Tac-Toe<span>,</span><br>with a twist you<br>won't see coming<span>.</span></h1>
+      <p class="lede">An enhanced Tic-Tac-Toe game with animated interactions, full accessibility support, an AI opponent, and a gameplay mechanic that keeps every match moving — no more stalemates.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#download">Get the game</a>
+        <a class="btn btn-ghost" href="#features">See what it does</a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">Built with .NET MAUI</span>
+        <span class="tag">MIT licensed</span>
+        <span class="tag">AI opponent mode</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="gpx-divider" aria-hidden="true">
+    <span class="gpx-label left">Board state</span>
+    <span class="gpx-label right">FIFO in progress</span>
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <polygon class="fill" points="0,120 0,80 90,60 180,85 260,45 360,75 460,35 560,70 660,50 760,18 860,55 960,38 1060,68 1160,42 1200,58 1200,120" />
+      <polyline class="line" points="0,80 90,60 180,85 260,45 360,75 460,35 560,70 660,50 760,18 860,55 960,38 1060,68 1160,42 1200,58" />
+    </svg>
+  </div>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What it does</p>
+        <h2>Classic rules. One mechanic that changes everything.</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16M15 4v16"/></svg></div>
+          <h3>Classic rules</h3>
+          <p>Three in a row, in any direction, wins immediately — same Tic-Tac-Toe you already know.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+          <h3>The FIFO twist</h3>
+          <p>Place a third symbol without winning, and your oldest one starts to "breathe" — a warning it's about to be removed.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><circle cx="9" cy="10" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1.2" fill="currentColor" stroke="none"/></svg></div>
+          <h3>AI opponent mode</h3>
+          <p>No second player? Play straight against the built-in AI.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h11M13 8l4 4-4 4"/><circle cx="19" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+          <h3>Animated interactions</h3>
+          <p>Every placement and removal is a soft, considered animation — never abrupt, never jarring.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.4-7-11.5A7 7 0 0 1 19 9.5C19 14.6 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></div>
+          <h3>Built for accessibility</h3>
+          <p>Every cell has a semantic description, animations never flash, and a high-contrast theme is fully supported.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16"/><path d="M6 19V9l4 3 4-7 4 5v9"/></svg></div>
+          <h3>One codebase, every platform</h3>
+          <p>Built with .NET MAUI, so the same app runs natively across Android, iOS, and Windows.</p>
+        </div>
+      </div>
+
+      <div class="also-row">
+        <span class="tag">WCAG-validated contrast</span>
+        <span class="tag">No flashing animations</span>
+        <span class="tag">MIT license</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE TWIST, explained ============ -->
+  <section class="preview">
+    <div class="wrap">
+      <div class="twist-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/><circle cx="12" cy="12" r="3.5"/></svg>
+        </div>
+        <div>
+          <h3>How the FIFO rule works</h3>
+          <p>Place a third symbol without completing a winning line, and your <em>oldest</em> placed symbol begins to breathe — a soft scale animation warning you it's about to go. On your next move, it's removed. Each player is capped at three symbols on the board at once, so the game never freezes into a dead draw — it just keeps moving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREENSHOTS ============ -->
+  <section class="showcase" id="screenshots">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">See it in action</p>
+        <h2>Gameplay and dashboard, light and dark.</h2>
+      </div>
+
+      <div class="section-head" style="margin-bottom:16px;">
+        <h3 style="font-size:1rem; color:var(--text-lo); font-weight:600;">Gameplay</h3>
+      </div>
+      <div class="shot-pair" style="margin-bottom:44px;">
+        <figure>
+          <img src="https://github.com/SkJonko/TicTacToe/raw/master/assets/Game_Light.png" alt="Tic-Tac-Toe gameplay screen in light theme">
+          <figcaption>Light theme</figcaption>
+        </figure>
+        <figure>
+          <img src="https://github.com/SkJonko/TicTacToe/raw/master/assets/Game_Dark.png" alt="Tic-Tac-Toe gameplay screen in dark theme">
+          <figcaption>Dark theme</figcaption>
+        </figure>
+      </div>
+
+      <div class="section-head" style="margin-bottom:16px;">
+        <h3 style="font-size:1rem; color:var(--text-lo); font-weight:600;">Dashboard</h3>
+      </div>
+      <div class="shot-pair">
+        <figure>
+          <img src="https://github.com/SkJonko/TicTacToe/raw/master/assets/Dashboard_Light.png" alt="Tic-Tac-Toe dashboard screen in light theme">
+          <figcaption>Light theme</figcaption>
+        </figure>
+        <figure>
+          <img src="https://github.com/SkJonko/TicTacToe/raw/master/assets/Dashboard_Dark.png" alt="Tic-Tac-Toe dashboard screen in dark theme">
+          <figcaption>Dark theme</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="gpx-divider" aria-hidden="true" style="transform:scaleY(-1);">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <polygon class="fill" points="0,120 0,80 90,60 180,85 260,45 360,75 460,35 560,70 660,50 760,18 860,55 960,38 1060,68 1160,42 1200,58 1200,120" />
+      <polyline class="line" points="0,80 90,60 180,85 260,45 360,75 460,35 560,70 660,50 760,18 860,55 960,38 1060,68 1160,42 1200,58" />
+    </svg>
+  </div>
+
+  <!-- ============ DOWNLOAD ============ -->
+  <section class="download" id="download">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Get the game</p>
+        <h2>Download Tic-Tac-Toe</h2>
+        <p>Packaged builds aren't published yet — for now, build it yourself from the open-source repo.</p>
+      </div>
+
+      <div class="platform-grid">
+          <div class="platform-card">
+              <div class="os">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c-1 2-1 3 0 4-2 0-4 2-4 5 0 4 2 8 4 9 2-1 4-5 4-9 0-3-2-5-4-5 1-1 1-2 0-4Z" /></svg>
+                  iOS
+              </div>
+              <p>Coming soon.</p>
+              <a class="btn btn-ghost btn-disabled" data-platform="ios">Coming soon</a>
+          </div>
+          <div class="platform-card">
+              <div class="os">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="4" width="10" height="16" rx="2" /><path d="M9 3l1 1M15 3l-1 1" /><circle cx="12" cy="17" r="0.6" fill="currentColor" /></svg>
+                  Android
+              </div>
+              <p>Get the APK directly.</p>
+              <a class="btn btn-primary" href="https://github.com/SkJonko/TicTacToe/releases/download/v1.0.1/com.skjonko.tictoe.infinite-Signed.apk" data-platform="android">Download for Android</a>
+          </div>
+          <div class="platform-card">
+              <div class="os">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5.5 11 4v7.5H3z" /><path d="M12.5 3.8 21 2.6v9H12.5z" /><path d="M3 12.5h8v7.6L3 19z" /><path d="M12.5 12.5H21v9L12.5 20z" /></svg>
+                  Windows
+              </div>
+              <p>Coming soon.</p>
+              <a class="btn btn-ghost btn-disabled" data-platform="windows">Coming soon</a>
+          </div>
+      </div>
+
+      <p class="release-note">
+        Available right now: <a href="https://github.com/SkJonko/TicTacToe" target="_blank" rel="noopener">source on GitHub</a>, MIT licensed — clone it and run it with .NET MAUI.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 Advanced Tic-Tac-Toe</span>
+    <a href="index.html">All apps</a>
+    <a href="https://github.com/SkJonko/TicTacToe" target="_blank" rel="noopener">github.com/SkJonko/TicTacToe</a>
+  </div>
+</footer>
+
+<script src="assets/js/theme-toggle.js"></script>
+
+</body>
+</html>

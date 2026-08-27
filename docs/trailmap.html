@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrailMap — discover hiking trails anywhere</title>
+<meta name="description" content="TrailMap helps hikers discover and explore trails around the world. Browse destinations, find trails near you, preview routes on an interactive map, and export to GPX.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <div class="nav-left">
+      <a class="nav-home" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        All apps
+      </a>
+      <a class="nav-brand" href="#top"><span class="mark">▲</span> TrailMap</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li class="hide-mobile"><a href="#preview">Preview</a></li>
+      <li class="hide-mobile"><a href="#download">Download</a></li>
+      <li><span class="lang-chip">EN · ΕΛ</span></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle light and dark theme">
+          <span class="dot" id="themeDot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.4A9 9 0 1 1 11.6 3a7 7 0 0 0 9.4 9.4Z"/></svg>
+          </span>
+          <span id="themeLabel">Dark</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<div class="notice-bar">
+  <div class="wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+    <span><strong>TrailMap is under active development.</strong> It currently covers trails in Greece only — more destinations are on the way.</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Hiking trails, wherever you are</p>
+      <h1>Every trail<br>on the map<span>.</span><br>Yours to explore<span>.</span></h1>
+      <p class="lede">TrailMap helps you discover and explore hiking trails around the world — browse destinations, find routes near you, and see everything you need on an interactive map before you set out.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#download">Get TrailMap</a>
+        <a class="btn btn-ghost" href="#features">See what it does</a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">iOS · Android · Windows</span>
+        <span class="tag">English · Ελληνικά</span>
+        <span class="tag">Light · Dark theme</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="gpx-divider" aria-hidden="true">
+    <span class="gpx-label left">GPX route trace</span>
+    <span class="gpx-label right">Export-ready</span>
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <polygon class="fill" points="0,120 0,80 90,60 180,85 260,45 360,75 460,35 560,70 660,50 760,18 860,55 960,38 1060,68 1160,42 1200,58 1200,120" />
+      <polyline class="line" points="0,80 90,60 180,85 260,45 360,75 460,35 560,70 660,50 760,18 860,55 960,38 1060,68 1160,42 1200,58" />
+    </svg>
+  </div>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What TrailMap does</p>
+        <h2>Everything you need before — and during — the hike.</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.4-7-11.5A7 7 0 0 1 19 9.5C19 14.6 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></div>
+          <h3>Browse by destination</h3>
+          <p>Explore hiking destinations by city and country, or search directly by name.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg></div>
+          <h3>Trails near you</h3>
+          <p>Use your device's location to find trails within about 20 km, automatically.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2Z"/><path d="M9 4v14M15 6v14"/></svg></div>
+          <h3>Interactive OSM map (Open Street Map)</h3>
+          <p>View every available trail on an OpenStreetMap-based map, and open any route for full detail.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16"/><path d="M6 19V9l4 3 4-7 4 5v9"/></svg></div>
+          <h3>Distance, gain & difficulty</h3>
+          <p>Every trail shows distance, estimated duration, elevation gain, difficulty, a description, and a photo.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h11M13 8l4 4-4 4"/><circle cx="19" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+          <h3>Animated route preview</h3>
+          <p>Watch the route draw itself across the map before you decide it's the one.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
+          <h3>Export to GPX</h3>
+          <p>Save a favorite trail as a GPX file and carry it into any other hiking or navigation app.</p>
+        </div>
+      </div>
+
+      <div class="also-row">
+        <span class="tag">Save favorite trails</span>
+        <span class="tag">Bundled data works offline</span>
+        <span class="tag">EN / EL language</span>
+        <span class="tag">Light / dark theme</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOWCASE (GIF DEMOS) ============ -->
+  <section class="showcase" id="preview">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">See it in action</p>
+        <h2>The app, doing exactly what it says.</h2>
+      </div>
+      <div class="showcase-grid">
+        <div class="showcase-card">
+          <div class="frame">
+            <img src="assets/TrailsMap/base-functionality.gif" alt="Browsing destinations, finding nearby trails, and viewing a route on the map in TrailMap">
+          </div>
+          <div class="caption">
+            <h3>Find & preview a trail</h3>
+            <p>Browse destinations, search nearby, and open a route on the map.</p>
+          </div>
+        </div>
+        <div class="showcase-card">
+          <div class="frame">
+            <img src="assets/TrailsMap/favorite.gif" alt="Saving a trail to favorites in TrailMap">
+          </div>
+          <div class="caption">
+            <h3>Save a favorite</h3>
+            <p>Keep routes you want to come back to, saved locally on your device.</p>
+          </div>
+        </div>
+        <div class="showcase-card">
+          <div class="frame">
+            <img src="assets/TrailsMap/language-theme.gif" alt="Switching language and toggling light and dark theme in TrailMap">
+          </div>
+          <div class="caption">
+            <h3>Language & theme</h3>
+            <p>Switch between English and Greek, and light or dark, right in the app.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROUTE PREVIEW ============ -->
+  <section class="preview" id="route-preview">
+    <div class="wrap preview-grid">
+      <div class="map-card">
+        <div class="frame">
+          <svg viewBox="0 0 480 300" role="img" aria-label="Animated illustration of a trail route being drawn on a map">
+            <rect width="480" height="300" fill="var(--surface-2)" />
+            <g fill="none" stroke="var(--border)" stroke-width="1">
+              <path d="M-20 250 C 80 220, 160 270, 260 230 S 420 200, 500 240" />
+              <path d="M-20 210 C 90 180, 170 230, 270 190 S 430 160, 500 200" />
+              <path d="M-20 170 C 100 140, 190 190, 290 150 S 440 120, 500 160" />
+              <path d="M-20 130 C 110 100, 210 150, 300 110 S 450 85, 500 120" />
+            </g>
+            <polyline class="route-anim" points="40,255 90,205 140,215 190,150 250,165 300,100 360,110 420,55"
+                       fill="none" stroke="var(--primary)" stroke-width="3.5"
+                       stroke-linecap="round" stroke-linejoin="round"
+                       stroke-dasharray="520" stroke-dashoffset="520" />
+            <circle cx="40" cy="255" r="6" fill="var(--text-hi)" />
+            <circle cx="420" cy="55" r="6" fill="var(--primary)" />
+            <text x="48" y="276" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--text-lo)">START</text>
+            <text x="378" y="42" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--text-lo)">SUMMIT</text>
+          </svg>
+        </div>
+        <div class="map-caption">
+          <span>N 39.6243° · E 20.8537°</span>
+          <span>11.2 KM · +680 M · 4H 10M</span>
+        </div>
+        <div class="difficulty-legend">
+          <span><i style="background:var(--difficulty-easy)"></i>Easy</span>
+          <span><i style="background:var(--difficulty-medium)"></i>Medium</span>
+          <span><i style="background:var(--difficulty-hard)"></i>Hard</span>
+          <span><i style="background:var(--difficulty-expert)"></i>Expert</span>
+        </div>
+      </div>
+
+      <div class="preview-copy">
+        <p class="eyebrow">Before you commit</p>
+        <h2>Preview the route, not just the name.</h2>
+        <p>Every trail opens into its full route, an animated preview, and the details that actually decide whether it's worth the drive: distance, duration, elevation gain, and difficulty.</p>
+        <p>Found the one you want? Save it to favorites, or export it as a GPX file to carry into any other navigation app.</p>
+        <div class="stat-row">
+          <div class="stat"><b>Local</b><span>Favorites, no account</span></div>
+          <div class="stat"><b>GPX</b><span>Export any trail</span></div>
+          <div class="stat"><b>Offline</b><span>Bundled data cached</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gpx-divider" aria-hidden="true" style="transform:scaleY(-1);">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <polygon class="fill" points="0,120 0,80 90,60 180,85 260,45 360,75 460,35 560,70 660,50 760,18 860,55 960,38 1060,68 1160,42 1200,58 1200,120" />
+      <polyline class="line" points="0,80 90,60 180,85 260,45 360,75 460,35 560,70 660,50 760,18 860,55 960,38 1060,68 1160,42 1200,58" />
+    </svg>
+  </div>
+
+  <!-- ============ DOWNLOAD ============ -->
+  <section class="download" id="download">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Get the app</p>
+        <h2>Download TrailMap</h2>
+        <p>Available on iOS, Android, and Windows.</p>
+      </div>
+
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="os">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c-1 2-1 3 0 4-2 0-4 2-4 5 0 4 2 8 4 9 2-1 4-5 4-9 0-3-2-5-4-5 1-1 1-2 0-4Z"/></svg>
+            iOS
+          </div>
+          <p>iPhone and iPad, via the App Store.</p>
+          <a class="btn btn-ghost btn-disabled" href="#" data-platform="ios">Coming soon</a>
+        </div>
+
+        <div class="platform-card">
+          <div class="os">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="4" width="10" height="16" rx="2"/><path d="M9 3l1 1M15 3l-1 1"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
+            Android
+          </div>
+          <p>Get the APK directly.</p>
+          <a class="btn btn-primary" href="assets/apk/com.skjonko.trailsmap-Signed.apk" download data-platform="android">Download for Android</a>
+        </div>
+
+        <div class="platform-card">
+          <div class="os">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5.5 11 4v7.5H3z"/><path d="M12.5 3.8 21 2.6v9H12.5z"/><path d="M3 12.5h8v7.6L3 19z"/><path d="M12.5 12.5H21v9L12.5 20z"/></svg>
+            Windows
+          </div>
+          <p>Installer for Windows 10 and later.</p>
+          <a class="btn btn-ghost btn-disabled" data-platform="windows">Coming soon</a>
+        </div>
+      </div>
+
+      <p class="release-note">
+        Latest version: <code>v1.0.28</code>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 TrailMap</span>
+    <a href="index.html">All apps</a>
+    <span>English · Ελληνικά</span>
+  </div>
+</footer>
+
+<script src="assets/js/theme-toggle.js"></script>
+
+</body>
+</html>
